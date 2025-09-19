@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup - ArtGlass</title>
+    <link rel="stylesheet" href="login-signup-style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="20250914_1756_image.png" type="image/png">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="form-container" id="formContainer">
+            <div class="glass-effect"></div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="form-switch">
+                <div class="form-header">
+                    <h2><i class="fas fa-sign-in-alt"></i> Welcome Back</h2>
+                    <p>Sign in to your account</p>
+                </div>
+
+                <form id="loginFormData">
+                    <div class="form-group">
+                        <input type="email" id="loginEmail" placeholder="Email Address" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+
+                    <div class="form-group" style="display: flex; align-items: center; justify-content: space-between;">
+                        <label style="display: flex; align-items: center; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">
+                            <input type="checkbox" style="margin-right: 8px;"> Remember me
+                        </label>
+                        <a href="#" style="color: rgba(0, 255, 255, 0.8); text-decoration: none; font-size: 0.9rem;">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn">Sign In</button>
+                </form>
+
+                <div class="social-login">
+                    <p>Or sign in with</p>
+                    <button class="social-btn">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn">
+                        <i class="fab fa-facebook-f"></i>
+                        Continue with Facebook
+                    </button>
+                </div>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <span class="toggle-link" onclick="showSignup()">Sign Up</span></p>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" class="form-switch" style="display: none;">
+                <div class="form-header">
+                    <h2><i class="fas fa-user-plus"></i> Create Account</h2>
+                    <p>Join us today</p>
+                </div>
+
+                <form id="signupFormData">
+                    <div class="form-group">
+                        <input type="text" id="signupName" placeholder="Full Name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="signupEmail" placeholder="Email Address" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required>
+                        <i class="fas fa-lock"></i>
+                    </div>
+
+                    <div class="form-group" style="display: flex; align-items: center; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">
+                        <input type="checkbox" id="terms" required style="margin-right: 8px;">
+                        <label for="terms">I agree to the <a href="#" style="color: rgba(0, 255, 255, 0.8); text-decoration: none;">Terms & Conditions</a></label>
+                    </div>
+
+                    <button type="submit" class="btn">Create Account</button>
+                </form>
+
+                <div class="social-login">
+                    <p>Or sign up with</p>
+                    <button class="social-btn">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <button class="social-btn">
+                        <i class="fab fa-facebook-f"></i>
+                        Continue with Facebook
+                    </button>
+                </div>
+
+                <div class="form-footer">
+                    <p>Already have an account? <span class="toggle-link" onclick="showLogin()">Sign In</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="loginbannar.js"></script>
+</html>

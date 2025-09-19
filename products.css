@@ -1,0 +1,234 @@
+/* ============================
+   Products Section
+============================ */
+.products-section {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, #ffffff, #f9fbff); /* خلفية ناعمة */
+}
+
+.products-section h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+
+  /* Text Glass Effect */
+  background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(0,123,255,0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 15px rgba(0, 123, 255, 0.4),
+               0 0 30px rgba(0, 123, 255, 0.3);
+
+  transition: transform 0.5s ease, text-shadow 0.5s ease;
+}
+
+.products-section h2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) skewX(-20deg);
+  width: 60%;   /* عرض اللمعة */
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+  animation: shine 3s infinite;
+  pointer-events: none; /* عشان ما تعطلش الكليك */
+}
+
+@keyframes shine {
+  0%   { left: -60%; }
+  50%  { left: 50%; }
+  100% { left: 160%; }
+}
+
+
+@keyframes shine {
+  0% { left: -50%; }
+  100% { left: 100%; }
+}
+
+.products-section h2:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(0,123,255,0.6),
+               0 0 40px rgba(0,123,255,0.5);
+}
+
+
+
+/* ============================
+   Container & Gallery
+============================ */
+.products-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.product-gallery {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  width: 200%; /* لو عندك سلايدر */
+}
+
+.Product-slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column; /* النص تحت الصورة */
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: transform 0.4s ease;
+}
+/*Product-logo
+==========================
+      product logo
+==========================*/
+.brand-logo {
+  position: absolute;
+  top: 10px;   /* مسافة من فوق */
+  left: 300px;  /* مسافة من الشمال */
+  padding: 6px 10px;
+  animation: floatLogo 3s infinite ease-in-out; /* حركة ناعمة */
+}
+
+.brand-logo img {
+  max-width: 60px;  /* حجم اللوجو */
+  height: auto;
+  display: block;
+  filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.6)); /* ظل خارجي */
+  transform: perspective(500px) rotateY(10deg) rotateX(5deg); /* 3D */
+  transition: transform 0.4s ease;
+}
+
+.brand-logo img:hover {
+  transform: perspective(500px) rotateY(0deg) rotateX(0deg) scale(1.1); /* 3D + تكبير عند المرور */
+}
+
+
+/* حركة خفيفة */
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ============================
+   Product Image
+============================ */
+.Product-slide img {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  filter: drop-shadow(0 5px 20px rgba(0, 0, 0, 0.35));
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.Product-slide img:hover {
+  transform: scale(1.08) rotate(1.5deg);
+  filter: drop-shadow(0 8px 25px rgba(0, 123, 255, 0.4));
+}
+
+/* ============================
+   Product Name
+============================ */
+.product-name {
+  margin-top: 12px;                 
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);     /* نص أسود جلاسي */
+  text-align: center;
+  padding: 8px 18px;
+  border-radius: 12px;
+
+  /* خلفية زجاجية */
+  background: rgba(0, 174, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  /* تأثير إضاءة للنص */
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.3),
+               0 0 14px rgba(0, 0, 0, 0.15);
+
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* لمعان زجاجي متحرك */
+.product-name::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: shine 2s infinite linear; /* أبطأ وأكثر فخامة */
+}
+
+@keyframes shine {
+  0%   { left: -60%; }
+  100% { left: 130%; }
+}
+
+.product-name:hover {
+  transform: translateY(-4px) scale(1.05);
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.45),
+               0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================
+   Slider Arrows
+============================ */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 123, 255, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  z-index: 10;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 18px rgba(0, 123, 255, 0.35);
+}
+
+.arrow:hover {
+  background: rgba(0, 123, 255, 0.6);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 6px 25px rgba(0, 123, 255, 0.55);
+}
+
+.left-arrow {
+  left: 15px;
+}
+
+.right-arrow {
+  right: 15px;
+}

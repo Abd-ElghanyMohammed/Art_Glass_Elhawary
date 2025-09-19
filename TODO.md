@@ -1,0 +1,4 @@
+- [x] Edit styles.css mobile media query to make .phone-link, .location-link, .lang-toggle display: inline-block with margin: 0 0.5rem, and add .lang-toggle { transform: none; }
+- [x] Test mobile navbar layout to ensure buttons are side by side without overlap
+- [x] Add login banner that drops down from navbar, appears every 5 seconds, disappears after 8 seconds, with blue glassy style
+- [x] Create login-signup.html with login and signup forms, blue glassy style, glass card appearance, and animations
